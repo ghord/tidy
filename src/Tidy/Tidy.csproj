@@ -6,7 +6,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.1.1</Version>
+    <Version>1.0.0-alpha.1</Version>
     <Authors>Grzegorz Hordyński</Authors>
     <Company />
     <Description>WPF utility library containing proper Windows 10 controls theme, performance oriented custom controls and MVVM essentials</Description>
