@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main # Default release branch
+    paths:
+      - 'Tidy.csproj' # Only on project file changes
 jobs:
   publish:
     name: build, pack & publish
