@@ -20,7 +20,7 @@ namespace Tidy.Mvvm
         /// Raises property changed notification for given property
         /// </summary>
         /// <param name="propertyName">Property name</param>
-        protected void RaisePropertyChanged(string propertyName)
+        protected void RaisePropertyChanged(string? propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
@@ -33,7 +33,7 @@ namespace Tidy.Mvvm
         /// <param name="value">Value </param>
         /// <param name="propertyName">Property that change notification is raised for</param>
         /// <returns>True if change notification was raised</returns>
-        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        protected bool SetField<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
         {
             if(!Equals(field, value))
             {

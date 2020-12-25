@@ -3,16 +3,65 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Tidy.Showcase"
+        xmlns:local="clr-namespace:Tidy.Showcase" xmlns:controls="clr-namespace:Tidy.Showcase.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <TabControl>
+            <TabItem Header="Buttons">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Margin="10">
+
+
+                        <TextBlock>WPF theme</TextBlock>
+                        <Button Margin="0,0,0,5" Padding="2,2,2,1">Button</Button>
+                        <Button Margin="0,0,0,5" Padding="2,2,2,1" IsEnabled="False">Disabled Button</Button>
+                        <controls:AlwaysDefaultedButton Margin="0,0,0,5">Default Button</controls:AlwaysDefaultedButton>
+                        <ToggleButton Margin="0,0,0,5" Padding="2,2,2,1">Toggle button</ToggleButton>
+                        <RepeatButton Margin="0,0,0,5" Padding="2,2,2,1">Repeat button</RepeatButton>
+                    </StackPanel>
+
+                    <StackPanel Margin="10" Grid.Column="1">
+                        <StackPanel.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/Tidy;component/Themes/Controls.xaml" />
+                                </ResourceDictionary.MergedDictionaries>
+
+                                <Style x:Key="AlwaysDefaultedButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource {x:Type Button}}">
+                                    
+                                </Style>
+                            </ResourceDictionary>
+                        </StackPanel.Resources>
+
+                        <TextBlock>Tidy theme</TextBlock>
+                        <Button Margin="0,0,0,5" >Button</Button>
+                        <Button Margin="0,0,0,5" IsEnabled="False">Disabled Button</Button>
+                        <controls:AlwaysDefaultedButton 
+                            Style="{StaticResource AlwaysDefaultedButtonStyle}" 
+                            Margin="0,0,0,5">Default Button</controls:AlwaysDefaultedButton>
+                        <ToggleButton Margin="0,0,0,5">Toggle button</ToggleButton>
+                        <RepeatButton Margin="0,0,0,5">Repeat button</RepeatButton>
+                    </StackPanel>
+
+                    <StackPanel Margin="10" Grid.Column="2">
+                        <TextBlock>Native</TextBlock>
+                        <Grid x:Name="NativeButtons">
+
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
             <TabItem Header="Mvvm" DataContext="{Binding Mvvm}">
                 <StackPanel>
                     <Button Command="{Binding RelayActionCommand}">RelayCommand</Button>
                     <Button Command="{Binding AsyncRelayActionCommand}">async RelayCommand</Button>
-
                 </StackPanel>
             </TabItem>
         </TabControl>
