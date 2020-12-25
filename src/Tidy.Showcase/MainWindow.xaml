@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl>
+        <TabControl Margin="4">
             <TabItem Header="Buttons">
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -23,7 +23,7 @@
                         <Button Margin="0,0,0,5" Padding="2,2,2,1">Button</Button>
                         <Button Margin="0,0,0,5" Padding="2,2,2,1" IsEnabled="False">Disabled Button</Button>
                         <controls:AlwaysDefaultedButton Margin="0,0,0,5">Default Button</controls:AlwaysDefaultedButton>
-                        <ToggleButton Margin="0,0,0,5" Padding="2,2,2,1">Toggle button</ToggleButton>
+                        <ToggleButton Margin="0,0,0,5" Padding="2,2,2,1" IsChecked="True">Toggle button</ToggleButton>
                         <RepeatButton Margin="0,0,0,5" Padding="2,2,2,1">Repeat button</RepeatButton>
                     </StackPanel>
 
@@ -46,7 +46,7 @@
                         <controls:AlwaysDefaultedButton 
                             Style="{StaticResource AlwaysDefaultedButtonStyle}" 
                             Margin="0,0,0,5">Default Button</controls:AlwaysDefaultedButton>
-                        <ToggleButton Margin="0,0,0,5">Toggle button</ToggleButton>
+                        <ToggleButton Margin="0,0,0,5" IsChecked="True">Toggle button</ToggleButton>
                         <RepeatButton Margin="0,0,0,5">Repeat button</RepeatButton>
                     </StackPanel>
 
@@ -58,6 +58,7 @@
                     </StackPanel>
                 </Grid>
             </TabItem>
+            
             <TabItem Header="Mvvm" DataContext="{Binding Mvvm}">
                 <StackPanel>
                     <Button Command="{Binding RelayActionCommand}">RelayCommand</Button>

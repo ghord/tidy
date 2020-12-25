@@ -73,6 +73,8 @@ namespace Tidy.Showcase.Forms
             // checkBox1
             // 
             this.checkBox1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.checkBox1.Location = new System.Drawing.Point(-1, 77);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(0);
